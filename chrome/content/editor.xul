@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://note/locale/note.dtd">
+<dialog id ='handynote-editor' xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	title="&note.common.editor;"
+	windowtype = "handynote:editor"
+	width='500'
+	height='350'
+	persist='width height screenX screenY'
+	onload= "NOTEAction.execute('initEditorCatalog')"
+	buttons="accept,cancel,extra2"
+	buttonlabelcancel="&note.common.cancel;"
+	buttonlabelaccept="&note.common.save;"
+	buttonlabelextra2="&note.editor.addrelatedlink;"
+	ondialogaccept="NOTEAction.execute('addNoteFromEditor');"
+	ondialogextra2="setRelatedLink();"
+	ondialogcancel="return true;">
+	<script type="text/javascript">
+	<![CDATA[
+		function setRelatedLink(){
+			document.getElementById('relatedlink-box').collapsed=false;
+			document.getElementById('relatedlink-textbox').value =  window.opener.content.location.href
+		}
+	]]>
+	</script>
+	<stringbundleset>
+		<stringbundle id="note-stringbundle" src="chrome://note/locale/note.properties"/>
+	</stringbundleset>
+	
+	<popupset>
+		<popup id = 'popoup-tagsuggestion' onpopupshowing="NOTEAction.execute('initTagSuggestion','note-editor-label')">
+			<richlistbox flex ='1' id='note-labels-popoup' width='200' height='200'>
+			</richlistbox>
+		</popup>
+	</popupset>
+	
+	<script src="note.js"/>
+	<vbox flex='1'>
+	<textbox multiline='true' id = 'note-editor'  class='plain' flex='1'/>
+	<textbox id = 'note-editor-label'  class='plain' context='popoup-tagsuggestion'/>
+	<hbox>
+		<menulist id = 'note-editor-menulist' flex ='1' oncommand ="NOTEAction.execute('memoryEditorStatus')">
+			<menupopup id ='note-editor-catalog'>
+			</menupopup>
+		</menulist>
+		<toolbarbutton id = 'note-editor-addcatalog' oncommand ="NOTEAction.execute('appendCatalog2')" tooltiptext = '&note.editor.addcatalog;' image ='chrome://note/skin/add.png'/>
+	</hbox>
+	<hbox id ='relatedlink-box' collapsed ='true'><label value='&note.editor.relatedlink;'/><textbox flex='1' id ='relatedlink-textbox'/></hbox>
+	</vbox>
+</dialog>

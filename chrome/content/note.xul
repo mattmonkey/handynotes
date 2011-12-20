@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://note/locale/note.dtd">
+<window id ='handynote-notepad' xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	windowtype = "handynote:popupwin" 
+	onload ="NOTEAction.execute('init')"
+	title="&note.common.handynote;"
+	persist='width height top left screenX screenY'
+	onunload="NOTEAction.execute('saveNote')">
+	
+	<script src="note.js"/>
+	
+	<stringbundleset>
+		<stringbundle id="note-stringbundle" src="chrome://note/locale/note.properties"/>
+	</stringbundleset>
+	
+	<popupset>
+		<popup id = 'popoup-tagsuggestion' onpopupshowing="NOTEAction.execute('initTagSuggestion','note-labelbox')">
+			<richlistbox flex ='1' id='note-labels-popoup' width='200' height='200'>
+			</richlistbox>
+		</popup>
+	</popupset>
+	
+	<keyset>	
+		<key key="w" modifiers="control" oncommand="window.close()" />
+	</keyset>
+	
+	<popupset>
+		<popup id="cat_opt">
+			<menuitem label="&note.catalog.append;" oncommand = "NOTEAction.execute('appendCatalog')"/>
+		</popup>
+		<tooltip id="note_html_tip">
+			<html:div id="note_html_tip_div" type="content"/>
+		</tooltip>
+		<popup id="popup_cat_modify" >
+			<menuitem label="&note.catalog.modify;"  oncommand = "NOTEAction.execute('modifyCatalog')"/>
+			<menuitem label="&note.catalog.append;"  oncommand = "NOTEAction.execute('appendCatalog')"/>
+			<menuitem label="&note.catalog.delete;"  oncommand = "NOTEAction.execute('removeCatalog')"/>
+		</popup>
+	</popupset>
+
+	
+	<hbox flex="1">
+		<vbox id="left-column" width="80" persist="width collapsed">
+			<listbox id="listbox_note_catalog"  context = 'cat_opt' flex = '1'>
+			</listbox>
+		</vbox>
+		
+		<splitter id="right-splitter" collapse="before" persist="orient">
+			<grippy/>
+		</splitter>
+		<vbox flex="1" style="overflow:auto">
+			<hbox>
+				<arrowscrollbox id='note-arrowscrollbox' flex='1'>				
+					<tabs id = 'note-catalogs-tabs' flex='1'>
+					
+					</tabs>			
+				</arrowscrollbox>
+				<toolbarbutton type='menu' image='chrome://note/skin/catalogmenu.png' context='note-sidebar-popup-catalog'>
+							<menupopup id ='note-sidebar-popup-catalog' onpopupshowing='NOTEAction.execute("initToolbarCatalogMenu")' >
+							</menupopup>
+						</toolbarbutton>					
+			</hbox>
+			
+			<vbox  id = "box_note" persist="collapsed" flex="1" style="overflow:auto">
+				<vbox id ="box_note_notes"/>
+			</vbox>
+
+			<vbox>
+			<hbox flex="1" style="overflow:auto">
+				<textbox  contextMenu = 'notetest'
+					autocompletesearchparam = "note-search-autocomplete"
+					autocompletesearch = "form-history"
+					minresultsforpopup='1'
+					tabscrolling = "true"
+					maxrows = "10"
+					autocompletepopup = "note-popup-autocomplete"
+					completeselectedindex = "true"
+					completedefaultindex = "true"
+					enablehistory = "true"
+					type = 'autocomplete'
+					id ='note-labels' flex='1'>						
+				</textbox>
+				<hbox>
+							<toolbarbutton image='chrome://note/skin/out.png' tooltiptext='&note.sidebar.toolbar.toggle;' oncommand = "var box = document.getElementById('handynote-appbtn-box');box.collapsed=!box.collapsed"/>
+						<hbox id='handynote-appbtn-box' persist="collapsed">
+							<toolbarbutton image='chrome://note/skin/aan.png' tooltiptext='&note.sidebar.tooltip.addnote;' oncommand = "NOTEAction.execute('addNullNote')"/>
+							<toolbarbutton image='chrome://note/skin/switch.png' id='handynote-switchopenmode' tooltiptext='&note.sidebar.toolbar.switchmode;' oncommand = "NOTEAction.execute('nextPage',false)"/>
+							<toolbarbutton image='chrome://note/skin/export.png' tooltiptext='&note.sidebar.tooltip.output;' oncommand = "NOTEAction.execute('saveNotes')"/>
+							<toolbarbutton image='chrome://note/skin/setting.png' tooltiptext='&note.menu.setting;' oncommand = "NOTEAction.execute('openSettingUI')"/>
+							<toolbarbutton image='chrome://note/skin/help.png' tooltiptext='&note.sidebar.toolbar.help;' oncommand = "NOTEAction.execute('openHelpPage')"/>
+						</hbox>
+						<toolbarbutton image='chrome://note/skin/up.png' id='note-btn-previoubox' tooltiptext='&note.sidebar.tooltip.previouspage;' oncommand = "NOTEAction.execute('nextPage',false)"/>
+						<toolbarbutton image='chrome://note/skin/down.png'  id='note-btn-nextbox' tooltiptext='&note.sidebar.tooltip.nextpage;' oncommand = "NOTEAction.execute('nextPage',true)"/>
+					
+            	</hbox>
+			</hbox>
+		</vbox>	
+		</vbox>
+	</hbox>
+</window>

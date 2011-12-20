@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://note/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://note/locale/note.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="note.js"/>
+	<script src="overlay.js"/>
+	<script src="lib/progress.js"/>
+	
+	<popup id="contentAreaContextMenu" >
+		<menu id ='menu_note' label ='&note.contextmenu.title;'  insertafter = 'context-keywordfield'>
+			<menupopup id = 'menupopup_notes' onpopupshowing='NOTEAction.execute("initContextMenu")'/>
+		</menu>
+	</popup>
+	
+
+
+	<stringbundleset>
+		<stringbundle id="note-stringbundle" src="chrome://note/locale/note.properties"/>
+	</stringbundleset>
+	
+	<keyset>	
+		<key id='note-sk-addnote' key="r" modifiers="alt" oncommand="NOTEAction.execute('editNote')" />
+		<key id='note-sk-viewnote' key="r" modifiers="alt shift" command="viewNoteSidebar" />
+	</keyset>
+
+	<menupopup id="menu_ToolsPopup">
+		<menu label = '&note.menu.menu;' insertafter ='devToolsSeparator'>
+			<menupopup>
+				<menuitem label="&note.menu.viewnotebook;" key = 'note-sk-viewnote' observes = 'viewNoteSidebar'/>			
+				<menuitem label="&note.menu.addnote;" key = 'note-sk-addnote' oncommand ="NOTEAction.execute('editNote')"/>
+				<menuseparator/>
+				<menuitem label="&note.menu.viewnotebookinfo;" oncommand = "NOTEAction.execute('viewNotebookInfo')"/>
+				<menuitem label="&note.menu.setting;" oncommand = "NOTEAction.execute('openSettingUI')"/>
+			</menupopup>
+		</menu>	
+	</menupopup>
+		
+	<broadcasterset id="mainBroadcasterSet"> 
+		<broadcaster id="viewNoteSidebar" 
+			autoCheck="true"
+			group="sidebar"
+			sidebarurl="chrome://note/content/sidebar.xul"
+			sidebartitle="&note.sidebar.title;"
+			oncommand="NOTEAction.execute('openNote')" />
+	</broadcasterset>
+	
+	<toolbarpalette  id="BrowserToolbarPalette">
+		<toolbarbutton  
+			id="note-toolbar-addnote"
+			label="&note.toolbar.addnote;" 
+			tooltiptext="&note.toolbar.addnote;"
+			oncommand="NOTEAction.execute('editNote')"
+			class="chromeclass-toolbar-additional"/>
+	    
+		<toolbarbutton
+			id="note-toolbar-viewnote"
+			label="&note.toolbar.viewnote;" 
+			tooltiptext="&note.toolbar.viewnote;"
+			observes = 'viewNoteSidebar'
+			class="chromeclass-toolbar-additional"/>	
+			
+	</toolbarpalette>
+
+	<statusbar id="status-bar">
+		<statusbarpanel id="status-note" 
+			contextmenu= 'handynote-booknote'
+			class="statusbarpanel-iconic"
+			style="cursor: pointer;"
+			tooltiptext="note"
+			image="chrome://note/skin/viewnote-13.png"
+			observes = 'viewNoteSidebar'>
+			
+		</statusbarpanel>
+	</statusbar>
+	
+	<hbox id="urlbar-icons">
+        <image  id ='readingnote-img' insertbefore="go-button"
+            src="chrome://note/skin/readingnote.png"
+            onclick = 'NOTEAction.execute("openReadingNotes")'
+            hidden="false" />
+    </hbox>
+    
+
+	
+</overlay>

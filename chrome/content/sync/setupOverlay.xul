@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://note/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://note/locale/note.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<prefpane id="paneWeaveServices" >
+		<preferences>
+		<preference id="pref-sync" name="services.sync.engine.handynote" type="bool"/>
+		</preferences>
+		<groupbox>
+			<caption label="HandyNote Sync"/>
+			<checkbox label='Sync Notes' preference='pref-sync'/>
+			<!--<label value='&note.options.syncwarn;'/>-->
+		</groupbox>
+	</prefpane>
+</overlay>

@@ -1,0 +1,17 @@
+#note-toolbar-addnote 
+{
+  list-style-image: url("chrome://note/skin/addnote-24.png");
+}
+[iconsize="small"] #note-toolbar-addnote
+{
+  list-style-image: url("chrome://note/skin/addnote-16.png");
+}
+
+#note-toolbar-viewnote
+{
+  list-style-image: url("chrome://note/skin/viewnote-24.png");
+}
+[iconsize="small"] #note-toolbar-viewnote
+{
+  list-style-image: url("chrome://note/skin/viewnote-16.png");
+}

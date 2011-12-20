@@ -1,0 +1,7 @@
+ruleditor {
+    -moz-binding: url("chrome://note/content/lib/ruleditor.xml#ruleditor");
+}
+
+ruledescription {
+    -moz-binding: url("chrome://note/content/lib/ruleditor.xml#ruledescription");
+}

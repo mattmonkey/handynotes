@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+
+<bindings
+ xmlns="http://www.mozilla.org/xbl"
+ xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:html="http://www.w3.org/1999/xhtml">
+    <binding id="ruleditor">
+        <content>
+            <xul:groupbox flex='1'>
+                <xul:caption label='Rule' />
+                <xul:hbox>
+                    <xul:textbox anonid='rule-tb' flex='1'/><xul:button anonid='append-btn' label='append'/>
+                </xul:hbox>
+	             <xul:vbox anonid='rule-list' style="overflow:auto" flex='1'/>
+            </xul:groupbox>
+        </content>
+        <implementation>
+        	<property name="rules"/>
+			<property name="url">
+                <setter>
+                    <![CDATA[
+						if(val) {
+						 document.getAnonymousElementByAttribute(this, "anonid", "rule-tb").setAttribute('value',val);
+						}
+					  ]]>
+                </setter>
+            </property>
+            <property name="rule">
+                <getter>
+                    <![CDATA[
+					return this.getAttribute('rule');
+				  ]]>
+                </getter>
+                <setter>
+                    <![CDATA[
+					    this.setAttribute('rule', val);
+						var ruleArray = val.split(';')
+						for(var cnt in ruleArray){
+							if(ruleArray[cnt].trim()){
+								this.appendRule(ruleArray[cnt].trim())
+							}
+						}
+					  ]]>
+                </setter>
+            </property>
+            <constructor>
+                <![CDATA[		
+				var btn = document.getAnonymousElementByAttribute(this, "anonid", "append-btn");
+				var tb = document.getAnonymousElementByAttribute(this, "anonid", "rule-tb");
+				var that = this;
+				btn.addEventListener('command',function(){
+					var rule = tb.value.trim();
+					if(rule!=""){
+						that.appendRule.apply(that,[rule]);
+					}
+					tb.value='';
+				},false);
+				]]>
+            </constructor>
+            <method name="appendRule">
+                <parameter name="aRule"/>
+                <body>
+                    <![CDATA[
+						var list = document.getAnonymousElementByAttribute(this, "anonid", "rule-list");
+						var textbox = document.createElement('textbox');
+						textbox.setAttribute('value',aRule);
+						textbox.setAttribute('readonly',true);
+						var removebtn = document.createElement('toolbarbutton');
+						removebtn.addEventListener('command',function(e){
+							var node = e.target.parentNode;
+							node.parentNode.removeChild(node);
+						},false);
+						removebtn.setAttribute('image','chrome://note/skin/remove.png');
+						textbox.appendChild(removebtn);
+						list.insertBefore(textbox,list.firstChild);
+					  ]]>
+                </body>
+            </method>
+			<method name="getRule">
+                <body>
+                    <![CDATA[
+						var list = document.getAnonymousElementByAttribute(this, "anonid", "rule-list");
+						var rule = []
+						for(var cnt in list.childNodes){
+							var str = list.childNodes[cnt].value;
+							if(str)
+								rule.push(list.childNodes[cnt].value);
+						}
+						return rule.join(';');
+					  ]]>
+                </body>
+            </method>
+        </implementation>
+    </binding>
+
+	 <binding id="ruledescription">
+	 	<content>
+            <xul:vbox>
+               <xul:description anonid='rulename' class='header' />
+               <xul:description anonid='rule' crop='left' class='indent'/>
+		    </xul:vbox>
+        </content>
+		
+        <implementation>
+        	<property name="nid"/>	 	
+        	<method name="setRuleInfo">
+                <parameter name="arg"/>
+                <body>
+                    <![CDATA[
+						document.getAnonymousElementByAttribute(this, "anonid", "rulename").setAttribute('value',arg.rulename);
+						document.getAnonymousElementByAttribute(this, "anonid", "rule").setAttribute('value',arg.rule);
+					  	if(arg.nid) this.nid= arg.nid;
+					  ]]>
+                </body>
+            </method>
+			<method name="getRuleInfo">
+                <body>
+                    <![CDATA[
+						var rslt ={};
+						rslt.rule = document.getAnonymousElementByAttribute(this, "anonid", "rule").getAttribute('value');
+						rslt.rulename = document.getAnonymousElementByAttribute(this, "anonid", "rulename").getAttribute('value');
+						rslt.nid = this.nid
+						return rslt;
+					  ]]>
+                </body>
+            </method>
+        </implementation>
+	 </binding>
+</bindings>

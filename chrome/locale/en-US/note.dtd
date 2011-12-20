@@ -1,0 +1,85 @@
+<!ENTITY note.options.title "HandyNote Setting">
+<!ENTITY note.options.options "Option">
+<!ENTITY note.options.openmode "Open in sidebar">
+<!ENTITY note.options.tooltipshowcatalog "preview to display categories">
+<!ENTITY note.options.memoryeditorstatus "Remember the state of the editor">
+<!ENTITY note.options.pageitemnum "Number of entries per page">
+<!ENTITY note.options.datasync "Data Synchronization">
+<!ENTITY note.options.weavesync "using Firefox Sync">
+
+<!ENTITY note.options.defalutsqlitefile "Use the default data file">
+<!ENTITY note.options.sqlitefile "Data File Location">
+<!ENTITY note.options.color "color">
+<!ENTITY note.options.cuttinglinecolor "Cutting Line Color">
+<!ENTITY note.options.unselectedcolor "Unselected Note Background Color">
+<!ENTITY note.options.selectedcolor "Selected Note Background Color">
+<!ENTITY note.options.selectedtagboxColor "Selected Tag Area Background Color">
+<!ENTITY note.options.deletecomfirm "Delete notes to remind">
+<!ENTITY note.options.shownotetooltip "Show Notes Preview">
+<!ENTITY note.options.shownotetoolbar "Show Notes toolbar">
+<!ENTITY note.options.noterows "The default number of rows displayed">
+<!ENTITY note.options.defaultfontsize "Default Font Size">
+<!ENTITY note.options.syncwarn "If you do not understand how to use Firefox Sync, not recommended">
+
+<!ENTITY note.editor.addcatalog "Add Category">
+<!ENTITY note.editor.relatedlink "Related Link">
+<!ENTITY note.editor.addrelatedlink "Add Related Link">
+
+<!ENTITY note.menu.menu "HandyNote">
+<!ENTITY note.menu.addnote "Add Note">
+<!ENTITY note.menu.viewnotebook "Open Notebook">
+<!ENTITY note.menu.restore "restore...">
+<!ENTITY note.menu.export "export...">
+<!ENTITY note.menu.backuphelp "Backup Guide">
+<!ENTITY note.menu.viewnotebookinfo "View Notebook Information">
+<!ENTITY note.menu.setting "setting...">
+<!ENTITY note.menu.appendrule "Reading Rules">
+
+<!ENTITY note.contextmenu.title "add note to...">
+
+
+<!ENTITY note.appendrule.edit "Edit">
+<!ENTITY note.appendrule.create "Create">
+<!ENTITY note.appendrule.append "Append">
+<!ENTITY note.appendrule.title "Reading Rules">
+<!ENTITY note.setreadingrule "Set Reading Rule">
+<!ENTITY note.autofilter "Open The Automatic Filtering">
+<!ENTITY note.autofilter2  "Click To Automatically Filter Invalid">
+<!ENTITY note.readingnotes  "Reading Notes">
+
+
+
+<!ENTITY note.common.save "save">
+<!ENTITY note.common.cancel "cancel">
+<!ENTITY note.common.editor "Note Editor">
+<!ENTITY note.common.handynote "HandyNote">
+
+<!ENTITY note.sidebar.title "HandyNote">
+<!ENTITY note.sidebar.tooltip.output "Export the current searched content">
+<!ENTITY note.sidebar.tooltip.deletenote "To delete the selected note">
+<!ENTITY note.sidebar.tooltip.addnote "Add Note">
+<!ENTITY note.sidebar.tooltip.search "Search tags syntax：l:yourlabel">
+<!ENTITY note.sidebar.tooltip.nextpage "Next Page">
+<!ENTITY note.sidebar.tooltip.previouspage "Previous Page">
+<!ENTITY note.sidebar.toolbar.catalog "Categories">
+<!ENTITY note.sidebar.toolbar.switchmode "Switch Mode">
+<!ENTITY note.sidebar.toolbar.help "Help">
+<!ENTITY note.sidebar.toolbar.toggle "Toggle Buttons">
+
+
+<!ENTITY note.sidebar.rulename "Name">
+<!ENTITY note.sidebar.rule "Rule">
+
+<!ENTITY note.catalog.append "Add Category">
+<!ENTITY note.catalog.modify "Modify Category">
+<!ENTITY note.catalog.delete "Delete Category">
+
+<!ENTITY note.toolbar.addnote "Add Note">
+<!ENTITY note.toolbar.viewnote "Open Notebook">
+
+<!ENTITY note.contentconfirm.replace "Replace The Database With Current Data">
+<!ENTITY note.contentconfirm.refresh "Refresh With the Database Data">
+<!ENTITY note.contentconfirm.tip "In other cases, Note has been modified, Now need to confirm!!!">
+<!ENTITY note.contentconfirm.title "Confirm changes">
+<!ENTITY note.contentconfirm.database "Database (Read Only)">
+<!ENTITY note.contentconfirm.current "Current Textbox (Editable)">

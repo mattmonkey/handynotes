@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://note/locale/note.dtd">
+<prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&note.options.title;">
+	<prefpane>
+		<preferences>
+			<preference id="pref-openmode" name="extensions.note.openmode" type="bool"/>
+			<preference id="pref-showcatalog" name="extensions.note.tooltipshowcatalog" type="bool"/>
+			<preference id="pref-pageshowingitemnum" name="extensions.note.pageshowingitemnum" type="int"/>
+			<preference id="pref-showtooltip" name="extensions.note.showtooltip" type="bool"/>
+			<preference id="pref-deletecomfirm" name="extensions.note.deletefirm" type="bool"/>
+			<preference id="pref-sync" name="services.sync.engine.handynote" type="bool"/>
+			<preference id="pref-col1" name="extensions.note.borderTopColor" type="string"/>
+			<preference id="pref-col2" name="extensions.note.backgroundColor" type="string"/>
+			<preference id="pref-col3" name="extensions.note.selectedBackgroundColor" type="string"/>
+			<preference id="pref-col4" name="extensions.note.selectedTagBackgroundColor" type="string"/>
+			<preference id="pref-fontsize" name="extensions.note.fontSize" type="int"/>
+		</preferences>
+		<groupbox>
+			<caption label='&note.options.options;'/>
+			<checkbox label ='&note.options.tooltipshowcatalog;' preference="pref-showcatalog"/>
+			<checkbox label ='&note.options.deletecomfirm;' preference="pref-deletecomfirm"/>			
+			<checkbox label ='&note.options.shownotetooltip;' preference="pref-showtooltip"/>	
+			<hbox>
+				<label value="&note.options.pageitemnum;"/><label flex='1'/>
+				<textbox preference="pref-pageshowingitemnum"/>
+			</hbox>
+			<hbox>
+				<label value="&note.options.defaultfontsize;"/><label flex='1'/>
+				<textbox preference="pref-fontsize"/>
+			</hbox>		
+		</groupbox>
+		<groupbox>
+			<caption label='&note.options.datasync;'/>
+			<checkbox label ='&note.options.weavesync;'  preference="pref-sync"/>
+			<!--<label value='&note.options.syncwarn;'/>-->
+		</groupbox>
+		<groupbox>
+			<caption label='&note.options.color;'/>
+			<hbox>
+				<label value='&note.options.cuttinglinecolor;'/>
+				<label flex='1'/>
+				<colorpicker type='button' preference="pref-col1"/>
+			</hbox>			
+			<hbox>
+				<label value='&note.options.unselectedcolor;'/>
+				<label flex='1'/>
+				<colorpicker type='button' preference="pref-col2"/>
+			</hbox>			
+			<hbox>
+				<label value='&note.options.selectedcolor;'/>
+				<label flex='1'/>
+				<colorpicker type='button' preference="pref-col3"/>
+			</hbox>			
+			<hbox>
+				<label value='&note.options.selectedtagboxColor;'/>
+				<label flex='1'/>
+				<colorpicker type='button' preference="pref-col4"/>
+			</hbox>
+		</groupbox>
+	</prefpane>
+</prefwindow>

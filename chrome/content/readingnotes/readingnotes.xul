@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://note/locale/note.dtd">
+<window id="HandyNote-ReadingNotes"
+		width='600'
+		height='400'
+		title='&note.readingnotes;'
+		persist='width height screenX screenY'
+		onload='NOTEAction.execute("initReadingNotes")'
+		windowtype = "handynote:readingnotes" 
+		onunload='NOTEAction.execute("saveReadingNotes")'
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		<script src="chrome://note/content/note.js"/>
+		<script src="chrome://note/content/lib/progress.js"/>
+	<script type="text/javascript">
+	<![CDATA[
+		function setAutoFilterStatus(){
+			var f = document.getElementById('handynote-autofilter-button').getAttribute('collapsed')=='true';
+			document.getElementById('handynote-autofilter-button').setAttribute('collapsed',!f)
+			document.getElementById('handynote-autofilter-button2').setAttribute('collapsed',f)
+			NOTEAction.execute('initReadingNotes',true)
+		}
+	]]>
+	</script>
+	<keyset>	
+		<key key="w" modifiers="control" oncommand="window.close()" />
+	</keyset>
+<tabbox flex='1'>
+	<hbox>
+		<arrowscrollbox flex= '1'>
+	  		<tabs id='ReadingNotes-tabs'/>
+	   </arrowscrollbox>	   
+	   <toolbarbutton image='chrome://note/skin/rule.png' tooltiptext='&note.setreadingrule;' oncommand="NOTEAction.execute('openAppendRule')"/>
+	   <toolbarbutton id ='handynote-autofilter-button' tooltiptext='&note.autofilter2;' image='chrome://note/skin/check2.png' persist="collapsed" collased ='false' oncommand='setAutoFilterStatus()'/>
+	   <toolbarbutton id ='handynote-autofilter-button2' tooltiptext='&note.autofilter;' image='chrome://note/skin/check.png' persist="collapsed" collapsed='true' oncommand='setAutoFilterStatus()'/>
+   </hbox>
+	<tabpanels id='ReadingNotes-panels' flex='1'/>
+</tabbox>
+</window>	

@@ -1,0 +1,85 @@
+﻿<!ENTITY note.options.title "设置笔记本">
+<!ENTITY note.options.options "杂项">
+<!ENTITY note.options.openmode "在侧边栏打开">
+<!ENTITY note.options.tooltipshowcatalog "笔记预览里显示分类">
+<!ENTITY note.options.memoryeditorstatus "笔记编辑器记住状态">
+<!ENTITY note.options.pageitemnum "每页条目数">
+<!ENTITY note.options.datasync "数据同步">
+<!ENTITY note.options.weavesync "使用 Firefox Sync (版本不低于1.4.4的扩展或者集成版本)">
+<!ENTITY note.options.color "颜色">
+<!ENTITY note.options.cuttinglinecolor "分隔线颜色">
+<!ENTITY note.options.unselectedcolor "未选择的笔记底色">
+<!ENTITY note.options.selectedcolor "选中的笔记底色">
+<!ENTITY note.options.selectedtagboxColor "选中的标签栏的底色">
+<!ENTITY note.options.deletecomfirm "笔记删除操作确定">
+<!ENTITY note.options.shownotetooltip "显示笔记预览">
+<!ENTITY note.options.shownotetoolbar "显示笔记工具条">
+<!ENTITY note.options.noterows "笔记默认显示行数">
+<!ENTITY note.options.defaultfontsize "默认字体大小">
+<!ENTITY note.options.syncwarn "如果你不明白如何使用Firefox Sync,不建议使用">
+
+<!ENTITY note.options.defalutsqlitefile "默认数据文件优先">
+<!ENTITY note.options.sqlitefile "数据文件位置">
+
+<!ENTITY note.autofilter "点击自动过滤">
+<!ENTITY note.autofilter2  "点击停止过滤">
+
+<!ENTITY note.appendrule.edit "编辑">
+<!ENTITY note.appendrule.create "创建">
+<!ENTITY note.appendrule.append "追加">
+<!ENTITY note.appendrule.title "阅读规则">
+<!ENTITY note.setreadingrule "设置阅读规则">
+<!ENTITY note.autofilter "点击开启自动过滤">
+<!ENTITY note.showallreadingnote "点击禁用自动过滤">
+<!ENTITY note.readingnotes  "阅读规则">
+
+<!ENTITY note.editor.addcatalog "添加分类">
+<!ENTITY note.editor.relatedlink "相关链接">
+<!ENTITY note.editor.addrelatedlink "添加相关链接">
+
+<!ENTITY note.menu.menu "HandyNote">
+<!ENTITY note.menu.addnote "添加笔记">
+<!ENTITY note.menu.viewnotebook "打开笔记本">
+<!ENTITY note.menu.restore "还原数据...">
+<!ENTITY note.menu.export "备份数据...">
+<!ENTITY note.menu.backuphelp "数据备份指南">
+<!ENTITY note.menu.viewnotebookinfo "查看笔记本信息">
+<!ENTITY note.menu.setting "设置...">
+<!ENTITY note.menu.appendrule "阅读规则">
+
+<!ENTITY note.contextmenu.title "添加笔记到...">
+
+<!ENTITY note.common.save "保存">
+<!ENTITY note.common.cancel "取消">
+<!ENTITY note.common.editor "笔记编辑">
+<!ENTITY note.common.handynote "HandyNotes">
+<!ENTITY note.editor.addurl "追加当前页面链接">
+
+<!ENTITY note.sidebar.title "笔记本">
+<!ENTITY note.sidebar.tooltip.output "导出当前检索内容">
+<!ENTITY note.sidebar.tooltip.deletenote "删除选中笔记">
+<!ENTITY note.sidebar.tooltip.addnote "添加笔记">
+<!ENTITY note.sidebar.tooltip.search "检索标签：l:你的标签">
+<!ENTITY note.sidebar.tooltip.nextpage "后页">
+<!ENTITY note.sidebar.tooltip.previouspage "前页">
+<!ENTITY note.sidebar.toolbar.catalog "分类">
+<!ENTITY note.sidebar.toolbar.switchmode "切换模式">
+<!ENTITY note.sidebar.toolbar.help "帮助">
+<!ENTITY note.sidebar.toolbar.toggle "伸缩按钮">
+
+<!ENTITY note.sidebar.rulename "名称">
+<!ENTITY note.sidebar.rule "规则">
+
+<!ENTITY note.catalog.append "添加分类">
+<!ENTITY note.catalog.modify "修改分类">
+<!ENTITY note.catalog.delete "删除分类">
+
+<!ENTITY note.toolbar.addnote "添加笔记">
+<!ENTITY note.toolbar.viewnote "打开笔记本">
+
+<!ENTITY note.contentconfirm.replace "用当前数据替换数据库">
+<!ENTITY note.contentconfirm.refresh "用数据库数据刷新">
+<!ENTITY note.contentconfirm.tip "发现笔记被修改过，在其它情况下">
+<!ENTITY note.contentconfirm.title "确认修改">
+<!ENTITY note.contentconfirm.database "数据库 (只读)">
+<!ENTITY note.contentconfirm.current "当前文本框(可编辑)">

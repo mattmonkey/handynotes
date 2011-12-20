@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://note/locale/note.dtd">
+<dialog id="HandyNote-ReadingNotes"
+		width='600'
+		height='400'
+		title='&note.contentconfirm.title;'
+		persist='width height'
+	    ondialogaccept="doOK()"
+	    buttonlabelcancel="&note.contentconfirm.refresh;"
+	    buttonlabelaccept="&note.contentconfirm.replace;"
+	    onload='load()'
+	    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		<script src="chrome://note/content/note.js"/>
+			<script type="text/javascript">
+	<![CDATA[
+		function load(){
+			document.getElementById('olddata-tb').value =window.arguments[0];
+			document.getElementById('curtdata-tb').value =window.arguments[1];			
+		}
+		function doOK(){
+			window.arguments[2].content = document.getElementById('curtdata-tb').value;
+			return true;
+		}
+	]]>
+	</script>
+	<vbox flex='1'>
+		<label value='&note.contentconfirm.tip;' style='color:red'/>	
+		<groupbox flex='1'>
+		<hbox flex='1'>
+			<vbox flex='1'>
+				<label value='&note.contentconfirm.database;'/>
+				<textbox id = 'olddata-tb' readonly ="true" multiline='true' flex='1' readOnly='true'/>
+			</vbox>
+			<vbox flex='1'>
+				<label value='&note.contentconfirm.current;'/>
+				<textbox id = 'curtdata-tb' multiline='true' flex='1'/>
+			</vbox>
+		</hbox>
+		</groupbox>
+     </vbox>
+</dialog>	

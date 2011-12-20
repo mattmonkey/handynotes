@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://note/content/lib/ruleditor.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://note/locale/note.dtd">
+<dialog id="handynote-appendrule"
+		onload ="NOTEAction.execute('initAppendRule')"
+		title='&note.appendrule.title;'
+		buttonlabelextra1 ='&note.appendrule.append;'
+		buttonlabelextra2 ='&note.appendrule.create;'
+		buttonlabelaccept = '&note.appendrule.edit;'
+		buttonaccesskeyaccept='E'
+		buttonaccesskeyextra1='A'
+		buttonaccesskeyextra2='C'
+		ondialogaccept="NOTEAction.execute('openRuleEditor');return false"
+		ondialogextra1="NOTEAction.execute('appendRule');return false"
+		ondialogextra2="NOTEAction.execute('createRuleAndNotes');return false"
+		buttons='accept,cancel,extra1,extra2'
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		xmlns:html="http://www.w3.org/1999/xhtml">	
+	<script src="chrome://note/content/note.js"/>
+	<stringbundleset>
+		<stringbundle id="note-stringbundle" src="chrome://note/locale/note.properties"/>
+	</stringbundleset>
+	<hbox><label value='URL : '/><textbox id='url' flex= '1'/></hbox>
+	<vbox style="overflow:auto" flex='1'>
+		<richlistbox id='rulelist' seltype='multiple' flex='1'/>
+	</vbox>
+</dialog>	
