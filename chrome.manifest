@@ -1,7 +1,7 @@
-content note jar:chrome/note.jar!/content/
-locale note en-US jar:chrome/note.jar!/locale/en-US/
-locale note zh-CN jar:chrome/note.jar!/locale/zh-CN/
-skin note classic/1.0 jar:chrome/note.jar!/skin/
+content note chrome/content/
+locale note en-US chrome/locale/en-US/
+locale note zh-CN chrome/locale/zh-CN/
+skin note classic/1.0 chrome/skin/
 style	chrome://global/content/customizeToolbar.xul	chrome://note/skin/overlay.css
 overlay	chrome://browser/content/browser.xul	chrome://note/content/firefoxOverlay.xul
 overlay chrome://browser/content/preferences/preferences.xul chrome://note/content/sync/setupOverlay.xul

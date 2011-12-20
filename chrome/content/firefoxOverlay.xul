@@ -12,8 +12,6 @@
 		</menu>
 	</popup>
 	
-
-
 	<stringbundleset>
 		<stringbundle id="note-stringbundle" src="chrome://note/locale/note.properties"/>
 	</stringbundleset>
